@@ -1,0 +1,24 @@
+{
+  "name": "contact.stalk.io",
+  "description": "Contact with us - api server",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "John Kim",
+      "email": "yohany@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "mongoose": "~3.8.x",
+    "restify": "~2.7.0",
+    "colors": "~0.6.2",
+    "optimist": "~0.6.1"
+  },
+  "keywords": [
+    "contact"
+  ],
+  "repository": "git://github.com/xpush/contact.stalk.io",
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
