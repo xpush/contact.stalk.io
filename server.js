@@ -60,7 +60,7 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.use(restify.CORS( {origins: ['*:*']}));
 server.use(restify.fullResponse());
-server.use(restify.jsonp());
+//server.use(restify.jsonp());
 
 server.post('/message', function (req, res, next) {
 
@@ -68,6 +68,8 @@ server.post('/message', function (req, res, next) {
     res.send({status: 'error', message: 'name, email and message must be supplied'});
     return;
   }
+
+  console.log('['+req.params.email+'] send messages');
 
   mongoPersister.createMessage(
     req.params.app,
