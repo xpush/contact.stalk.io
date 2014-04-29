@@ -1,4 +1,3 @@
-
 var fs       = require('fs'),
     util     = require('util'),
     colors   = require('colors'),
@@ -65,12 +64,13 @@ server.use(restify.jsonp());
 
 server.post('/message', function (req, res, next) {
 
-  if(!req.params.name || !req.params.email || !req.params.message){
+  if(!req.params.app || !req.params.name || !req.params.email || !req.params.message){
     res.send({status: 'error', message: 'name, email and message must be supplied'});
     return;
   }
 
   mongoPersister.createMessage(
+    req.params.app,
     req.params.name,
     req.params.email,
     req.params.message,
